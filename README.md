@@ -52,6 +52,36 @@ vehicle{
 
 ## API Reference
 
+#### Create new user
+
+```http
+  POST /users/
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+|   user   | `json` | Cria um novo objeto|
+
+#### Get all vehicles
+
+```http
+  GET /users
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+|     -     |     -    |Lista todos os usuários cadastrados|
+
+#### Get user by id
+
+```http
+  GET /users/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Busca um usuário pelo ID |
+
+
 #### Create new vehicle
 
 ```http
@@ -59,9 +89,9 @@ vehicle{
 ```
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-|   vehicles   | `json` | Cria um novo objeto|
+|   vehicle   | `json` | Cria um novo objeto|
 
-#### Get all items
+#### Get all vehicles
 
 ```http
   GET /vehicles
@@ -71,7 +101,7 @@ vehicle{
 | :-------- | :------- | :------------------------- |
 |     -     |     -    |Lista todos os veículos cadastrados|
 
-#### Get item
+#### Get vehicle by id
 
 ```http
   GET /vehicles/${id}
@@ -81,7 +111,7 @@ vehicle{
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Busca um veículo pelo ID |
 
-#### Get item by name
+#### Get vehicle by name
 
 ```http
   GET /vehicles/?name=
@@ -101,7 +131,7 @@ vehicle{
 | `id`      | `string` | **Required**. |
 | `field`|`string`| Campo a ser editado    |
 
-#### Remove item
+#### Remove vehicle
 
 ```http
   Delete /vehicles/${id}
@@ -110,3 +140,7 @@ vehicle{
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Remove um veículo pelo ID |
+## Author
+
+- [@MárcioRodrigues](https://github.com/mrraxa01)
+
