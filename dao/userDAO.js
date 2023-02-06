@@ -1,5 +1,6 @@
 const connDB = require('../infra/connection');
 const {ulid} = require('ulid');
+const crypto = require("../services/crypto");
 
 class userDAO{
     constructor(){
@@ -9,8 +10,10 @@ class userDAO{
     create (data, callback){
         const{name, email, password} = data;
 
-        const sql = `INSERT INTO users (id, name, email, password) 
-        VALUES ('${ulid()}', '${name}', '${email}', '${password}')`;
+        const crypt = crypto.encrypt(password);
+
+        const sql = `INSERT INTO users (id, name, email, password, salt) 
+        VALUES ('${ulid()}', '${name}', '${email}', '${crypt.hash}', '${crypt.salt}')`;
 
         connDB.run(sql, callback);
             
